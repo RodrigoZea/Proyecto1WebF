@@ -7,7 +7,7 @@ module.exports = {
         rules: [{
             test: /\.(js|jsx)$/,
             exclude: /node_modules/,
-            use: ['babel-loader']
+            use: ['babel-loader', 'eslint-loader']
         },
         {
             test: /\.html$/,
@@ -16,11 +16,30 @@ module.exports = {
                     loader: "html-loader"
                 }
             ]
+        },
+        {
+            test: /\.scss$/,
+            use: ['style-loader', 'css-loader', 'sass-loader']
+        },
+        {
+            test: /\.(png|jpg)$/,
+            loader: 'url-loader'
+        },
+        {
+            test: /\.ttf$/,
+            use: [
+                {
+                    loader: 'ttf-loader',
+                    options: {
+                        name: './font/[hash].[ext]'
+                    },
+                },
+            ]
         }
         ]
     },
     resolve: {
-        extensions: ['*', '.js', '.jsx']
+        extensions: ['*', '.js', '.jsx', '.scss']
     },
     plugins: [
         new HtmlWebPackPlugin({

@@ -3,3 +3,30 @@ Gradient 1 - #C2EFC8, #559FF1
 Gradient 2 - #FCC76F, #F240A2
 Gradient 3 - #4C94F3, #E53DAA
 */
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+@font-face {
+    font-family: 'CircularBold'; /*a name to be used later*/
+    src: url('../../resources/fonts/CircularStd-Bold.ttf') format('truetype'); /*URL to font*/
+}
+
+
+body {
+    background-image: linear-gradient(90deg, #C2EFC8, #559FF1);
+    background-size: 50% 50% / 100% 100%;
+    background-repeat: no-repeat;
+
+}
+
+h1 {
+    font-family: 'CircularBold', sans-serif;
+    font-weight: bold;
+    color: #153C61;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: #153C61;
+}
