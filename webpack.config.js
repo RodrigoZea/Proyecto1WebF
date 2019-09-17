@@ -22,19 +22,15 @@ module.exports = {
             use: ['style-loader', 'css-loader', 'sass-loader']
         },
         {
-            test: /\.(png|jpg)$/,
+            test: /\.(png|jpg|ttf)$/,
             loader: 'url-loader'
         },
         {
-            test: /\.ttf$/,
-            use: [
-                {
-                    loader: 'ttf-loader',
-                    options: {
-                        name: './font/[hash].[ext]'
-                    },
-                },
-            ]
+            test: /\.svg$/,
+            use: {
+                loader: 'svg-url-loader',
+                options: {}
+            }
         }
         ]
     },

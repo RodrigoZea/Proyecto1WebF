@@ -4,29 +4,408 @@ Gradient 2 - #FCC76F, #F240A2
 Gradient 3 - #4C94F3, #E53DAA
 */
 
+$colorHighlight: #1e3264;
+$fontGeneral: 'CircularBold', sans-serif;
+$fontLight: 'CircularBook', sans-serif;
+
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 @font-face {
     font-family: 'CircularBold'; /*a name to be used later*/
     src: url('../../resources/fonts/CircularStd-Bold.ttf') format('truetype'); /*URL to font*/
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CircularBook'; /*a name to be used later*/
+    src: url('../../resources/fonts/CircularStd-Book.ttf') format('truetype'); /*URL to font*/
+    font-weight: normal;
+    font-style: normal;
 }
 
 
 body {
     background-image: linear-gradient(90deg, #C2EFC8, #559FF1);
-    background-size: 50% 50% / 100% 100%;
+    background-size: cover;
     background-repeat: no-repeat;
 
 }
 
-h1 {
-    font-family: 'CircularBold', sans-serif;
-    font-weight: bold;
-    color: #153C61;
+.header h1 {
+    font-family: $fontGeneral;
+    font-weight: bolder;
+    color: $colorHighlight;
+    font-size: 3.8rem;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    margin-bottom: 0.625rem;
 }
 
-h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
-    color: #153C61;
+.header h2 {
+    font-family:  $fontLight;
+    font-size: 1rem;
+    font-weight: 400;
+    color: $colorHighlight;
+    margin-top: -5px;
+
 }
+
+.header {
+    text-align: center;
+    margin: 0 auto 6.5rem auto;
+}
+
+
+.horizontalNavbar {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.navMainContainer {
+    background-image: linear-gradient(90deg, #C2EFC8, #559FF1);
+    display: flex;
+    justify-content: space-between;
+    height: 6em;
+    
+}
+
+.profileContainer {
+    display: flex;
+    align-content: flex-start;
+    color: $colorHighlight;
+}
+
+.textProfile {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    right: 8px;
+    top: 8px;
+}
+
+.profileName {
+    font-family:  $fontGeneral;
+    font-weight: bolder;
+    align-self: flex-end;
+}
+
+.profileOptions {
+    font-family:  $fontLight;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+.profilePic {
+    border-radius: 100%;
+    border-style: solid;
+    border-width: 6px;
+    border-color: $colorHighlight;
+    zoom: 35%;
+}
+
+.hoverProfile {
+    transition: 0.3s;
+}
+
+.hoverProfile:hover {
+    color: white;
+}
+
+.spotifyPic {
+    width: 240px;
+    height: 42px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 100px;
+  position: fixed;
+  z-index: 1;
+  top: 110px;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav div {
+    transform: rotate(-90deg);
+    font-family:  $fontGeneral;
+    white-space: nowrap;
+    font-size: 12px;
+    color: $colorHighlight;
+    font-weight: bold;
+    opacity: 0.6;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.sidenav div:hover {
+    opacity: 1;
+}
+
+.sidenav div:nth-child(1){
+    position: relative;
+    top: 25px;
+
+}
+
+.sidenav div:nth-child(2){
+    position: relative;
+    top: 200px;
+}
+
+.sidenav div:nth-child(3){
+    position: relative;
+    top: 350px;
+}
+
+.sidenav div:nth-child(4){
+    position: relative;
+    top: 450px;
+}
+
+.mainContainer {
+    margin-left: 100px;
+}
+
+.bottomBar {
+    height: 2px;
+    width: 100%;
+    background-color: $colorHighlight;
+}
+
+.favoritesContainer {
+    text-align: center;
+    font-family:  $fontGeneral;
+}
+
+
+.favoritesContainer ul {
+    display: block;
+    list-style-type: none;
+    margin-block-end: 2em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.favoritesContainer li {
+    display: inline-block;
+    text-align: center;
+    margin: 0 2vw;
+}
+
+.favoritesContainer li a{
+    color: $colorHighlight;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: opacity 300ms;
+    text-transform: capitalize;
+}
+
+.svgPrueba {
+    background: url('../../resources/anim.svg');
+    width: 1050px ;
+    height: 150px;
+}
+
+.navMainContainer svg {
+    fill: #1e3264;
+    display: block;
+    width: 240px;
+    height: 42px;
+
+}
+
+/* All styles related to cards */
+
+/* cardBase start */
+.cardBase {
+    position: relative;
+    width: 100%;
+    max-width: 56.25rem;
+}
+
+.cardBase.right {
+    text-align: center;
+    margin-top: 3.125rem;
+    margin-bottom: 9.375rem;
+    margin: 0 auto 4.375rem auto;
+}
+
+.cardBase.left {
+    margin: 0 auto 2.1875rem auto;
+}
+/* cardBase end */
+
+.cardBackground {
+    width: 92.5%;
+    height: 92.5%;
+    background-color: $colorHighlight;
+    position: absolute;
+    opacity: 0.08;
+    bottom: -3.5vh;
+    left: 3.5%;
+    z-index: -1;
+}
+
+/* cardImage start */
+.cardImage {
+    margin: 0;
+    width: 450px;
+    height: 450px;
+    background-size: cover;
+    background-position: center center;
+}
+
+.cardBase.right .cardImage {
+    opacity: 1;
+    margin-left: 50%;
+}
+
+.cardBase.left .cardImage{
+    margin: 0;
+}
+/* cardImage end */
+
+.cardDetails {
+    font-family: $fontGeneral;
+}
+
+/* Card details */
+.cardBase .cardDetails {
+    min-width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 8%;
+    width: auto;
+    min-width: 100%;
+    height: auto;
+}
+
+/* Card details right */
+.cardBase.right .cardDetails {
+    left: 0;
+    right: inherit;
+    text-align: left;
+}
+
+.cardBase.left .cardDetails {
+    right: 0;
+    text-align: right;
+}
+
+/* Card h2 */
+.cardBase .cardDetails h2{
+    font-size: 1.25rem;
+    color: #ffffff;
+    font-style: normal;
+    font-weight: 500;
+    background-color: rgba(30, 50, 100, 0.25);
+    padding: 0.3125rem 1.5625rem;
+    display: inline-block;
+    width: auto;
+}
+
+/* Card h2 right */
+.cardBase.right .cardDetails h2{
+    margin: 0 0 3% 3%;
+    align-self: flex-start;
+}
+
+.cardBase.left .cardDetails h2{
+    margin: 0 3% 3% 0;
+    align-self: flex-start;
+}
+
+/* Card h3 */
+.cardBase .cardDetails h3{
+    font-size: 3.75rem;
+    color: #ffffff;
+    font-family: $fontGeneral;
+    font-weight: 700;
+    background-color: #1e3264;
+    padding: 0.625rem 2.1875rem;
+    text-align: left;
+}
+
+/* Card h3 right */
+.cardBase.right .cardDetails h3{
+    max-width: 47%;
+    min-width: 47%;
+    line-height: 1.1;
+    margin: 0 auto 0 0;
+}
+
+.cardBase.left .cardDetails h3{
+    max-width: 47%;
+    min-width: 47%;
+    line-height: 1.1;
+    margin: 0 0 0 auto;
+}
+
+.cardBase .cardDetails p{
+    color: #1e3264;
+    background-color: #ffffff;
+    font-family: $fontLight;
+    font-size: 1.25rem;
+    padding: 0.3125rem 1.5625rem;
+    display: inline-block;
+}
+
+.cardBase.right .cardDetails p{
+    margin: -0.625rem 0 0 6%;
+}
+
+.cardBase.left .cardDetails p{
+    margin: -0.625rem 6% 0 0;
+}
+
+.playButton {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: #ffffff;
+    cursor: pointer;
+}
+
+.playButton:hover {
+    fill: #ffffff9d;
+}
+
+.audioPlayer {    
+    width: 45%;
+    font-size: 1rem;
+    display: flex;
+    color: #ffffff;
+}
+
+.cardBase.right .audioPlayer{
+    margin: 3.5% auto 0 7.5%;
+}
+
+.cardBase.left .audioPlayer{
+    margin: 3.5% 0 0 auto;
+}
+
+.audioPlayer .playInfo {
+    padding-left: 1vw;
+    text-align: left;
+    position: relative; 
+    top: 5px;
+}
+
+.audioPlayer .playSong {
+    font-family: $fontGeneral;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.audioPlayer .playArtist {
+    font-family: $fontLight;
+    margin-top: -0.125rem;
+}
+
+
