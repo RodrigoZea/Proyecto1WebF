@@ -12,25 +12,66 @@ $fontLight: 'CircularBook', sans-serif;
 
 @font-face {
     font-family: 'CircularBold'; /*a name to be used later*/
-    src: url('../../resources/fonts/CircularStd-Bold.ttf') format('truetype'); /*URL to font*/
+    src: url('../../resources/fonts/CircularSpotifyHead-Bold.otf') format('opentype'); /*URL to font*/
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'CircularBook'; /*a name to be used later*/
-    src: url('../../resources/fonts/CircularStd-Book.ttf') format('truetype'); /*URL to font*/
+    src: url('../../resources/fonts/CircularSpotifyText-Book.otf') format('opentype'); /*URL to font*/
     font-weight: normal;
     font-style: normal;
 }
 
 
 body {
+    padding: 0;
+    margin: 0;
+}
+
+/*.appContainer {
+    width: 100%;
+    position: relative;
+    right: 8px;
+}*/
+
+
+
+
+/*background-image: linear-gradient(145deg, #509bf5, #f037a6); other*/
+.favorites {
     background-image: linear-gradient(90deg, #C2EFC8, #559FF1);
     background-size: cover;
     background-repeat: no-repeat;
-
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) 0s;
+    z-index: -1;
 }
+
+.favorites.active {
+    opacity: 1;
+}
+
+.habits {
+    background-image: linear-gradient(90deg, #FCC76F, #F240A2);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) 0s;
+    z-index: -1;
+}
+
+.habits.active {
+    opacity: 1;
+}
+
 
 .header h1 {
     font-family: $fontGeneral;
@@ -47,34 +88,135 @@ body {
     font-size: 1rem;
     font-weight: 400;
     color: $colorHighlight;
-    margin-top: -5px;
+    margin-top: 1px;
 
 }
 
 .header {
     text-align: center;
-    margin: 0 auto 6.5rem auto;
+    margin: 0 auto 7rem auto;
 }
+
+.trackContainer {
+    margin-bottom: 20em;
+}
+
+.trends {
+    margin: 0 7.5vw 0 7.5vw;
+    position: relative;
+    overflow: hidden;
+    max-width: 85vw;
+}
+
+.listening {
+    text-align: center;
+    margin: 0 auto 6.25rem auto;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+}
+
+.listeningHabits {
+    margin: -15em auto 0 auto;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    flex: 0 1 45%;
+    text-align: center;
+    font-family: $fontGeneral;
+    color: $colorHighlight;
+}
+
+.listening h1 {
+    font-family: $fontGeneral;
+    font-weight: bolder;
+    color: $colorHighlight;
+    font-size: 3.8rem;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    margin-bottom: 0.625rem;
+}
+
+.listening h2 {
+    font-family:  $fontLight;
+    font-size: 1rem;
+    font-weight: 400;
+    color: $colorHighlight;
+    margin-top: -5px;
+}
+
+.listeningHabits h1 {
+    font-family: $fontGeneral;
+    font-weight: bolder;
+    color: $colorHighlight;
+    font-size: 3.8rem;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    margin-bottom: 0.625rem;
+}
+
+.listeningHabits h2 {
+    font-family:  $fontLight;
+    font-size: 1rem;
+    font-weight: 400;
+    color: $colorHighlight;
+    margin-top: -5px;
+}
+
 
 
 .horizontalNavbar {
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 2;
+    z-index: 3;
+    width: 100%;
+    overflow: hidden;
 }
 
-.navMainContainer {
-    background-image: linear-gradient(90deg, #C2EFC8, #559FF1);
+.navMain {
     display: flex;
     justify-content: space-between;
     height: 6em;
-    
+}
+
+.navMainContainer.favorites {
+    background-image: linear-gradient(90deg, #C2EFC8, #559FF1);
+    opacity: 0;
+    position: absolute;
+    transition: opacity 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) 0s;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.navMainContainer.favorites.active {
+    opacity: 1;
+}
+
+
+.navMainContainer.habits {
+    background-image: linear-gradient(90deg, #FCC76F, #F240A2);   
+    opacity: 0;
+    position: absolute;
+    transition: opacity 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) 0s;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.navMainContainer.habits.active {
+   
+    opacity: 1;
+   
 }
 
 .profileContainer {
     display: flex;
     align-content: flex-start;
     color: $colorHighlight;
+    margin: 1.3em 2.5em 0 0;
 }
 
 .textProfile {
@@ -103,6 +245,7 @@ body {
     border-width: 6px;
     border-color: $colorHighlight;
     zoom: 35%;
+    box-shadow: 0 0 0 2px #1e3264;
 }
 
 .hoverProfile {
@@ -118,6 +261,28 @@ body {
     height: 42px;
 }
 
+.time {
+    max-width: 58.75rem;
+    margin: 0 auto 4.6875rem auto;
+    flex-wrap: nowrap;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+.lineChart {
+    height: 360px;
+    width: 940px;
+    align-self: baseline;
+    margin: auto auto auto auto;
+    text-align: center;
+}
+
 .sidenav {
   height: 100%;
   width: 100px;
@@ -129,45 +294,13 @@ body {
   padding-top: 20px;
 }
 
-.sidenav div {
-    transform: rotate(-90deg);
-    font-family:  $fontGeneral;
-    white-space: nowrap;
-    font-size: 12px;
-    color: $colorHighlight;
-    font-weight: bold;
-    opacity: 0.6;
-    transition: 0.3s;
-    cursor: pointer;
+.initialOffset {
+    margin-top: 6em;
 }
 
-.sidenav div:hover {
-    opacity: 1;
-}
-
-.sidenav div:nth-child(1){
-    position: relative;
-    top: 25px;
-
-}
-
-.sidenav div:nth-child(2){
-    position: relative;
-    top: 200px;
-}
-
-.sidenav div:nth-child(3){
-    position: relative;
-    top: 350px;
-}
-
-.sidenav div:nth-child(4){
-    position: relative;
-    top: 450px;
-}
 
 .mainContainer {
-    margin-left: 100px;
+    margin-left: -25px;
 }
 
 .bottomBar {
@@ -179,6 +312,49 @@ body {
 .favoritesContainer {
     text-align: center;
     font-family:  $fontGeneral;
+}
+
+.sidenav ul li .bottomBar{
+    height: 100%;
+    width: 2px;
+    position: relative;
+    left: 13px;
+}
+
+.sidenav ul {
+    display: inline-block;
+    list-style-type: none;
+    white-space: nowrap;
+    font-family: $fontGeneral;
+    font-size: 12px;
+    float: left;
+    writing-mode: vertical-rl;/* FF */
+    writing-mode: tb-lr;
+    transform: scale(-1, -1);
+}
+
+.sidenav li {
+    cursor: pointer;
+    float: left;
+    position: relative;
+    top: 10px;
+    right: 10px;
+    margin-top: 2.5vw;
+}
+
+.sidenav a{
+    display: block;
+    color: $colorHighlight;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+    opacity: 0.35;
+    transition: 0.3s;
+}
+
+
+.sidenav a:hover{
+    opacity: 1;
 }
 
 
@@ -212,12 +388,12 @@ body {
     height: 150px;
 }
 
-.navMainContainer svg {
+.navMain svg {
     fill: #1e3264;
     display: block;
     width: 240px;
     height: 42px;
-
+    margin: 1.45em 0 0 1.4em;
 }
 
 /* All styles related to cards */
@@ -259,11 +435,13 @@ body {
     height: 450px;
     background-size: cover;
     background-position: center center;
+
 }
 
 .cardBase.right .cardImage {
     opacity: 1;
     margin-left: 50%;
+
 }
 
 .cardBase.left .cardImage{
@@ -272,6 +450,7 @@ body {
 /* cardImage end */
 
 .cardDetails {
+    z-index: 2;
     font-family: $fontGeneral;
 }
 
@@ -408,4 +587,120 @@ body {
     margin-top: -0.125rem;
 }
 
+.trendsHour {
+    flex: 0 1 45%;
+    text-align: center;
+    font-family: $fontGeneral;
+    color: $colorHighlight;
+}
 
+.trendsHour h1 {
+    font-family: $fontGeneral;
+    font-size: 5.625rem;
+    font-weight: 700;
+    line-height: 1em;
+    margin: 0;
+    letter-spacing: -0.03em;
+}
+
+.trendsHour h1 span{
+    font-family: $fontLight;
+    font-size: 3.75rem;
+    font-weight: 500;
+    line-height: 1em;
+    margin: 0;
+    letter-spacing: -0.03em;
+}
+
+.trendsHour p {
+    margin: 0;
+    line-height: 1em;
+}
+
+.trendsHour p span {
+    font-size: 0.75rem;
+}
+
+.divisor {
+    height: 8.125rem;
+    width: 0.7px;
+    margin: 0;
+    background: $colorHighlight;
+}
+
+.trendsUsage {
+    margin: 0 auto 11.875rem auto;
+    max-width: 61.25rem;
+    flex-wrap: nowrap;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    position: relative;
+    display: flex;
+    -webkit-box-align: start;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.trendsMins {
+    flex: 0 1 45%;
+    text-align: center;
+    font-family: $fontGeneral;
+    color: $colorHighlight;
+}
+
+.trendsMins h1{
+    font-size: 5.625rem;
+    font-weight: 700;
+    line-height: 1em;
+    margin: 0;
+    letter-spacing: -0.03em;
+}
+
+.trendsMins p{
+    font-size: 1.125rem;
+    margin: 0;
+    line-height: 1em;
+}
+
+.genreTitle {
+    color: white;
+    font-family: $fontGeneral;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    font-size: 2.5rem;
+    letter-spacing: -0.01em;
+    margin: -3.5rem 0.625rem;
+    line-height: 1;
+}
+
+.genreTitle h1:nth-child(1){
+    color: $colorHighlight;
+    margin-right: 10px;
+}
+
+.genreDescription{
+    font-family: $fontLight;
+    color: white;
+    font-size: 0.8rem;
+    margin: 0.9375rem 0;
+}
+
+.genreContainer {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+.tabbedContainer {
+    margin: 0 auto 7.5rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+}
