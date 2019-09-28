@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import '../styles/main.scss';
+import React, { Component } from 'react'
+import '../styles/main.scss'
 
 class GenreDistribution extends React.Component {
     render() {
@@ -14,11 +14,13 @@ class GenreDistribution extends React.Component {
                     </div>
                 </div>
                 <div className="distributionSubhead">
-                    One of the new streaming habits we’re measuring is listeners’ music Diversity. As one component of Diversity, we look at genre. 28% of your favorite artists are within your most-listened to genre. Did you know there are over 1,500 genres available on Spotify?
+                    <div>One of the new streaming habits we’re measuring is listeners’ music Diversity. As one component of Diversity, we look at genre.</div>
+                    <div>28%</div>
+                    <div>of your favorite artists are within your most-listened to genre. Did you know there are over 1,500 genres available on Spotify?</div>
                 </div>
             </div>
-        );
+        )
     }
 }
 
-export default GenreDistribution;
+export default GenreDistribution

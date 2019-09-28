@@ -8,9 +8,9 @@ class TopGenre extends React.Component {
             <div className="topGenre">
                 <div className="genreLeft">
                     <div className="genreInsight">
-                        <div>Your top genre is</div>
+                        <div>Your top genre is</div>&nbsp;
                         <div>Pop</div>
-                        <div>which appears in</div>
+                        <div>which appears in</div>&nbsp;
                         <div>28%</div>
                         <div>of your top tracks.</div>
                     </div>

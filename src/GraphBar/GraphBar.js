@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import '../styles/main.scss';
+import React, { Component } from 'react'
+import '../styles/main.scss'
 
 
 class GraphBar extends React.Component {
@@ -18,8 +18,8 @@ class GraphBar extends React.Component {
                     <div className="graphPercent">{this.props.percentage}</div>
                 </div>
             </div>
-        );
+        )
     }
 }
 
-export default GraphBar;
+export default GraphBar

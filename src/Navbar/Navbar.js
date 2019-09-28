@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import '../styles/main.scss';
-import Profile from '../Profile/Profile.js';
+import React, { Component } from 'react'
+import '../styles/main.scss'
+import Profile from '../Profile/Profile.js'
 
 class Navbar extends React.Component {
     render() {
-        const classList = ['navMainContainer favorites', 'navMainContainer habits', 'navMainContainer insights']
+        const classList = ['navMainContainer favorites', 'navMainContainer habits', 'navMainContainer insights', 'navMainContainer contact']
 
-        const classN = "navMainContainer " + `${this.props.activeSection}`;
+        const classN = "navMainContainer " + `${this.props.activeSection}`
 
 
         return (
@@ -28,8 +28,8 @@ class Navbar extends React.Component {
                 </div>
 
             </nav>
-        );
+        )
     }
 }
 
-export default Navbar;
+export default Navbar

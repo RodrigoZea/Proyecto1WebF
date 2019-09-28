@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import '../styles/main.scss';
-import Track from '../Track/Track';
+import React, { Component } from 'react'
+import '../styles/main.scss'
+import Track from '../Track/Track'
 
 class Genres extends React.Component {
     render() {
@@ -55,8 +55,8 @@ class Genres extends React.Component {
                 </div>
 
             </div>
-        );
+        )
     }
 }
 
-export default Genres;
+export default Genres

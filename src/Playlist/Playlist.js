@@ -14,10 +14,7 @@ class Playlist extends React.Component {
                     <div className="playlistContent">
                         <h1>Your Spotify.me playlist</h1>
                         <p>We’ve generated a playlist just for you based on your most recent streaming history. Enjoy! And keep scrolling to learn more about how we understand people through music.</p>
-                        <div className="playlistButtons">
-                            <div className="text">Save to Spotify</div>
-                            <div className="textRoll">Save to Spotify</div>
-                        </div>
+                        <button className="buttonBase dark">Save to Spotify</button>
                     </div>
                 </div>
             </div>

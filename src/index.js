@@ -10,7 +10,7 @@ class App extends React.Component {
     constructor(props) {
         super(props)
 
-        this.classListF = ['favorites', 'habits', 'insights']
+        this.classListF = ['favorites', 'habits', 'insights', 'contact']
 
         this.state = {
             activeSection: 'favorites'
@@ -25,8 +25,10 @@ class App extends React.Component {
             else if (window.pageYOffset > 1250 && window.pageYOffset < 4400) {
                 this.setState({ activeSection: 'habits' })
             }
-            else if (window.pageYOffset > 4400) {
+            else if (window.pageYOffset > 4400 && window.pageYOffset < 6700) {
                 this.setState({ activeSection: 'insights' })
+            } else if (window.pageYOffset > 6700) {
+                this.setState({ activeSection: 'contact' })
             }
         }
     }
@@ -52,7 +54,7 @@ class App extends React.Component {
 
                 }
                 <Navbar activeSection={this.state.activeSection} />
-                <SideNav />
+                <SideNav activeSection={this.state.activeSection} />
                 <MainContainer />
                 <Footer />
             </div>

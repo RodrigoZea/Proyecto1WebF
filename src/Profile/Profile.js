@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import '../styles/main.scss';
+import React, { Component } from 'react'
+import '../styles/main.scss'
 
 
 class Profile extends React.Component {
@@ -30,4 +30,4 @@ class Profile extends React.Component {
     }
 }
 
-export default Profile;
+export default Profile

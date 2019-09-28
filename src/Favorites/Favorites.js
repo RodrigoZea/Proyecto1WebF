@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import '../styles/main.scss';
-import FavoriteCard from '../FavoriteCard/FavoriteCard';
+import React, { Component } from 'react'
+import '../styles/main.scss'
+import FavoriteCard from '../FavoriteCard/FavoriteCard'
 
 
 
@@ -32,8 +32,8 @@ class Favorites extends React.Component {
                 </div>
 
             </div>
-        );
+        )
     }
 }
 
-export default Favorites;
+export default Favorites

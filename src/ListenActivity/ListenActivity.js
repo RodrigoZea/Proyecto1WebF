@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import '../styles/main.scss';
+import React, { Component } from 'react'
+import '../styles/main.scss'
 
 class ListenActivity extends React.Component {
     render() {
@@ -42,8 +42,8 @@ class ListenActivity extends React.Component {
 
             </div>
 
-        );
+        )
     }
 }
 
-export default ListenActivity;
+export default ListenActivity

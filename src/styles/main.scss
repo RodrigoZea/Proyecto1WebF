@@ -41,7 +41,7 @@ body {
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: opacity 1.5s linear;
+    transition: opacity 1.3s linear;
     z-index: -1;
 }
 
@@ -57,7 +57,7 @@ body {
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: opacity 1.4s linear;
+    transition: opacity 1.3s linear;
     z-index: -1;
 }
 
@@ -73,7 +73,7 @@ body {
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: opacity 1.6s linear;
+    transition: opacity 1.3s linear;
     z-index: -1;
 }
 
@@ -81,8 +81,82 @@ body {
     opacity: 1;
 }
 
+.contact {
+    background-image: linear-gradient(90deg,  #509bf5, #f037a6);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.3s linear;
+    z-index: -1;
+}
 
-.header h1 {
+.contact.active {
+    opacity: 1;
+}
+
+.navMainContainer.favorites {
+    background-image: linear-gradient(90deg, #C2EFC8, #559FF1);
+    opacity: 0;
+    position: absolute;
+    transition: opacity 1.3s linear;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.navMainContainer.favorites.active {
+    opacity: 1;
+}
+
+
+.navMainContainer.habits {
+    background-image: linear-gradient(90deg, #FCC76F, #F240A2);   
+    opacity: 0;
+    position: absolute;
+    transition: opacity 1.3s linear;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.navMainContainer.habits.active { 
+    opacity: 1;
+}
+
+.navMainContainer.insights {
+    background-image: linear-gradient(90deg,  #509bf5, #f037a6);
+    opacity: 0;
+    position: absolute;
+    transition: opacity 1.3s linear;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+    
+.navMainContainer.insights.active { 
+    opacity: 1;
+}
+
+.navMainContainer.contact {
+    background-image: linear-gradient(90deg,  #509bf5, #f037a6);
+    opacity: 0;
+    position: absolute;
+    transition: opacity 1.3s linear;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+    
+.navMainContainer.insights.contact { 
+    opacity: 1;
+}
+
+
+
+.start .header h1 {
     font-family: $fontGeneral;
     font-weight: bolder;
     color: $colorHighlight;
@@ -96,7 +170,7 @@ body {
     padding-top: 3em;
 }
 
-.header h2 {
+.start .header h2 {
     font-family:  $fontLight;
     font-size: 1rem;
     font-weight: 400;
@@ -107,9 +181,43 @@ body {
     max-width: 600px;
 }
 
+.header h1 {
+    font-family: $fontGeneral;
+    font-weight: bolder;
+    color: $colorHighlight;
+    font-size: 3.8rem;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    margin-bottom: 0.625rem;
+    text-align: center;
+    max-width: 800px;
+    margin: auto auto    auto auto;
+
+}
+
+.header h2 {
+    font-family:  $fontLight;
+    font-size: 1rem;
+    font-weight: 400;
+    color: $colorHighlight;
+    margin-top: 1px;
+    margin: auto auto    auto auto;
+    text-align: center;
+    max-width: 700px;
+}
+
 .header {
     text-align: center;
     margin: 0 auto 7rem auto;
+}
+
+.contactH .header {
+    text-align: center;
+    margin: 0 auto 2rem auto;
+}
+
+.contactH .header h1 {
+    margin-bottom: 0.2em;
 }
 
 .trackContainer {
@@ -196,48 +304,6 @@ body {
     height: 6em;
 }
 
-.navMainContainer.favorites {
-    background-image: linear-gradient(90deg, #C2EFC8, #559FF1);
-    opacity: 0;
-    position: absolute;
-    transition: opacity 1.5s linear;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-.navMainContainer.favorites.active {
-    opacity: 1;
-}
-
-
-.navMainContainer.habits {
-    background-image: linear-gradient(90deg, #FCC76F, #F240A2);   
-    opacity: 0;
-    position: absolute;
-    transition: opacity 1.4s linear;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-.navMainContainer.habits.active { 
-    opacity: 1;
-}
-
-.navMainContainer.insights {
-    background-image: linear-gradient(90deg,  #509bf5, #f037a6);
-    opacity: 0;
-    position: absolute;
-    transition: opacity 1.6s linear;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-    
-.navMainContainer.insights.active { 
-    opacity: 1;
-}
 
 
 .profileContainer {
@@ -342,11 +408,47 @@ body {
     font-family:  $fontGeneral;
 }
 
+
+.favoritesContainer ul li:nth-child(2) {
+    opacity: 0.3;
+    transition: opacity 0.3s linear;
+}
+
+.favoritesContainer ul li:nth-child(2):hover {
+    opacity: 0.5;
+}
+
+.favoritesContainer ul li:nth-child(2) div {
+    opacity: 0;
+}
+
+.favoritesContainer ul li:nth-child(3) {
+    opacity: 0.3;
+    transition: opacity 0.3s linear;
+}
+
+.favoritesContainer ul li:nth-child(3):hover {
+    opacity: 0.5;
+}
+
+.favoritesContainer ul li:nth-child(3) div {
+    opacity: 0;
+}
+
+
+
 .sidenav ul li .bottomBar{
-    height: 100%;
+    height: 0%;
     width: 2px;
     position: relative;
     left: 13px;
+    opacity: 0;
+    transition: width 0.5s  linear;
+}
+
+.sidenav ul li .bottomBar.active {
+    height: 100%;
+    opacity: 1;
 }
 
 .sidenav ul {
@@ -368,7 +470,18 @@ body {
     top: 10px;
     right: 10px;
     margin-top: 2.5vw;
+    opacity: 0.35;
+    transition: opacity 0.5s linear;
 }
+
+.sidenav li.active {
+    opacity: 1;
+}
+
+.sidenav li:hover {
+    opacity: 1;
+}
+
 
 .sidenav a{
     display: block;
@@ -376,14 +489,9 @@ body {
     text-align: center;
     padding: 16px;
     text-decoration: none;
-    opacity: 0.35;
-    transition: 0.3s;
+
 }
 
-
-.sidenav a:hover{
-    opacity: 1;
-}
 
 
 .favoritesContainer ul {
@@ -927,6 +1035,26 @@ body {
     margin-top: 0.625rem;
     max-width: 65%;
     font-size: 1.125rem;
+    overflow: auto; 
+}
+
+.distributionSubhead div:nth-child(1) {
+    color: white;
+    display: inline-block;
+    
+    
+}
+
+.distributionSubhead div:nth-child(2) {
+    color: $colorHighlight;
+    display: inline-block;
+    
+}
+
+.distributionSubhead div:nth-child(3) {
+    color: white;
+    display: inline-block;
+    
 }
 
 .insightContainer {
@@ -1021,8 +1149,8 @@ body {
     flex-wrap: nowrap;
     max-width: 56.25rem;
     position: relative;
-    width: 100%;
-    margin: 6.25rem auto;
+    //width: 100%;
+    margin: 6.25rem auto 17rem auto;
     display: flex;
     align-items: center;
     
@@ -1044,7 +1172,7 @@ body {
 }
 
 .playlistLeft img {
-    width: 100%;
+    //width: 100%;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -1094,7 +1222,35 @@ body {
     border: 2px solid transparent;
     text-transform: uppercase;
     font-size: 0.875rem;
+
+    width: 30%;
+    height: 70%;
 }
+
+.contactPage .playlistButtons {
+    //margin: 0.3125rem 0.625rem;
+    background: #1e3264;
+    //height: 2.8125rem;
+    border-radius: 1.5625rem;
+    font-size: 0.875rem;
+    color: #1e3264;
+    font-family: $fontGeneral;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.0625rem;
+    display: inline-block;
+    padding: 0 2.1875rem;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.25s ease-out 0s;
+    border: 2px solid transparent;
+    text-transform: uppercase;
+
+    width: 7%;
+    height: 20%;
+}
+
 
 .playlistButtons .text {
     color: #ffffff;
@@ -1102,6 +1258,10 @@ body {
     display: inline-block;
     position: absolute;
     transition: all 350ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.playlistButtons.empty .text {
+    color: $colorHighlight;
 }
 
 .playlistButtons .textRoll {
@@ -1113,6 +1273,28 @@ body {
     transform: translateY(1.25rem);
     transition: all 350ms cubic-bezier(0.215, 0.61, 0.355, 1);
 
+}
+
+.playlistButtons.empty {
+    //margin: auto;
+    border: 2px solid $colorHighlight;
+    color: $colorHighlight;
+    background-color: transparent;
+    //height: 2.8125rem;
+    border-radius: 1.5625rem;
+    font-size: 0.875rem;
+    font-family: $fontGeneral;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.0625rem;
+    //background: #ffffff;
+    display: inline-block;
+    padding: 0 2.1875rem;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.25s ease-out 0s;
+    text-transform: uppercase;
 }
 
 .finalFooter {
@@ -1205,4 +1387,47 @@ select:not(:-internal-list-box) {
 
 .footerRight a:hover {
     color: white;
+}
+
+.contactPage {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    margin: auto auto auto auto;
+    justify-content: center;
+    margin-bottom: 10em;
+}
+
+.buttonBase {
+
+    border: none;
+    border-radius: 100px;
+    font-size: 0.875rem;
+    font-family: $fontGeneral;
+    font-style: normal;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.0625rem;
+    width: 12.5em;
+    height: 3em;
+    cursor: pointer;
+    
+}
+
+.contactPage .buttonBase {
+    margin: 0.3125rem 0.625rem;
+}
+
+.buttonBase.dark {
+    
+    background-color: $colorHighlight;
+    color: white;
+}
+
+.buttonBase.light {
+    background: transparent;
+    border: solid;
+    border-radius: 1.5625rem;
+    border-color: $colorHighlight;
+    color: $colorHighlight;
 }

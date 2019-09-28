@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import '../styles/main.scss';
+import React, { Component } from 'react'
+import '../styles/main.scss'
 
 class Track extends React.Component {
     render() {
@@ -26,8 +26,8 @@ class Track extends React.Component {
                     </div>
                 </div>
             </div>
-        );
+        )
     }
 }
 
-export default Track;
+export default Track
