@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../styles/main.scss'
-import Profile from '../Profile/Profile.js'
+import Profile from '../Profile/Profile'
 
 class Navbar extends React.Component {
     render() {

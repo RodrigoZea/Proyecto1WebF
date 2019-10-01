@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../styles/main.scss'
-
+var profilePic = require('../../resources/img/user-placeholder.jpg')
 
 class Profile extends React.Component {
     constructor(props) {
@@ -22,7 +22,7 @@ class Profile extends React.Component {
                     </div>
                 </div>
                 <div>
-                    <img className="profilePic" src="../../resources/img/user-placeholder.jpg"></img>
+                    <img className="profilePic" src={profilePic}></img>
                 </div>
             </div>
         )

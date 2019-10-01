@@ -339,7 +339,7 @@ body {
     border-width: 6px;
     border-color: $colorHighlight;
     zoom: 35%;
-    box-shadow: 0 0 0 2px #1e3264;
+    box-shadow: 0 0 0 2px $colorHighlight;
 }
 
 .hoverProfile {
@@ -438,12 +438,12 @@ body {
 
 
 .sidenav ul li .bottomBar{
-    height: 0%;
+    height: 0px;
     width: 2px;
     position: relative;
-    left: 13px;
+    left: 15px;
     opacity: 0;
-    transition: width 0.5s  linear;
+    transition: height 0.5s  linear;
 }
 
 .sidenav ul li .bottomBar.active {
@@ -525,11 +525,11 @@ body {
 }
 
 .navMain svg {
-    fill: #1e3264;
+    fill: $colorHighlight;
     display: block;
     width: 240px;
     height: 42px;
-    margin: 1.45em 0 0 1.4em;
+    margin: 1.45em 0 0 2.2em;
 }
 
 /* All styles related to cards */
@@ -642,7 +642,7 @@ body {
     color: #ffffff;
     font-family: $fontGeneral;
     font-weight: 700;
-    background-color: #1e3264;
+    background-color: $colorHighlight;
     padding: 0.625rem 2.1875rem;
     text-align: left;
 }
@@ -663,7 +663,7 @@ body {
 }
 
 .cardBase .cardDetails p{
-    color: #1e3264;
+    color: $colorHighlight;
     background-color: #ffffff;
     font-family: $fontLight;
     font-size: 1.25rem;
@@ -749,12 +749,17 @@ body {
 }
 
 .trendsHour p {
+    font-family: $fontLight;
     margin: 0;
     line-height: 1em;
+    display: flex;
+    justify-content: center;
 }
 
 .trendsHour p span {
+    font-family: $fontLight;
     font-size: 0.75rem;
+    padding-left: 5px;
 }
 
 .divisor {
@@ -793,6 +798,7 @@ body {
 }
 
 .trendsMins p{
+    font-family: $fontLight;
     font-size: 1.125rem;
     margin: 0;
     line-height: 1em;
@@ -1033,7 +1039,7 @@ body {
     font-family: $fontLight;
     color: white;
     margin-top: 0.625rem;
-    max-width: 65%;
+    max-width: 55%;
     font-size: 1.125rem;
     overflow: auto; 
 }
@@ -1041,20 +1047,20 @@ body {
 .distributionSubhead div:nth-child(1) {
     color: white;
     display: inline-block;
-    
-    
+    position: relative;
 }
 
 .distributionSubhead div:nth-child(2) {
     color: $colorHighlight;
     display: inline-block;
-    
+    position: relative;
+
 }
 
 .distributionSubhead div:nth-child(3) {
     color: white;
     display: inline-block;
-    
+    position: relative;
 }
 
 .insightContainer {
@@ -1229,7 +1235,7 @@ body {
 
 .contactPage .playlistButtons {
     //margin: 0.3125rem 0.625rem;
-    background: #1e3264;
+    background: $colorHighlight;
     //height: 2.8125rem;
     border-radius: 1.5625rem;
     font-size: 0.875rem;
@@ -1323,7 +1329,7 @@ body {
     background: url('../../resources/arrow.svg');
     width: 12px;
     height: 9px;
-    fill: #1e3264;
+    fill: $colorHighlight;
 }
 
 .selectOptions {
@@ -1331,7 +1337,7 @@ body {
     background: none;
     border: none;
     outline: 0;
-    color: #1e3264;
+    color: $colorHighlight;
     cursor: pointer;
 
     text-transform: none;
@@ -1430,4 +1436,40 @@ select:not(:-internal-list-box) {
     border-radius: 1.5625rem;
     border-color: $colorHighlight;
     color: $colorHighlight;
+}
+
+.svgContainer {
+    display: flex;
+    justify-content: center;
+    clip-path: polygon(7% 0%, 7% 100%, 93% 100%, 93% 0);
+}
+
+.svgLeft {
+    background: url('../../resources/animLeft.svg') repeat 0 0;
+    background-repeat: repeat-x; 
+    height: 150px;
+    width: 550px;
+    box-sizing: border-box;
+    animation: marqueeL 3s linear infinite;
+    position: relative;
+}
+
+.svgRight {
+    background: url('../../resources/animRight.svg') repeat 0 0;
+    background-repeat: repeat-x; 
+    height: 150px;
+    width: 550px;
+    box-sizing: border-box;
+    animation: marqueeR 3s linear infinite;
+    position: relative;
+}
+
+@keyframes marqueeL {
+    0% { background-position: 0 0; }
+    100% { background-position: -350px 0; }
+}
+
+@keyframes marqueeR {
+    from { background-position: 0 0; }
+    to { background-position: 350px 0; }
 }

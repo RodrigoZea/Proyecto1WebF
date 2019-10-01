@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import '../styles/main.scss'
+var lineChartF = require('../../resources/img/line_chart.png')
 
 class ListenActivity extends React.Component {
     render() {
         return (
             <div className="trends">
                 <div className="time">
-                    <img className="lineChart" src="../../resources/img/line_chart.png"></img>
+                    <img className="lineChart" src={lineChartF}></img>
                 </div>
 
                 <div className="trendsUsage">

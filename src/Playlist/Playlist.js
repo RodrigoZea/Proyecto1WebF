@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../styles/main.scss'
-
+var playlist = require('../../resources/img/playlist.jpg')
 
 class Playlist extends React.Component {
     render() {
@@ -8,7 +8,7 @@ class Playlist extends React.Component {
             <div className="playlistContainer">
                 <div className="playlistBack"></div>
                 <div className="playlistLeft">
-                    <img src='../../resources/img/playlist.jpg'></img>
+                    <img src={playlist}></img>
                 </div>
                 <div className="playlistRight">
                     <div className="playlistContent">
